@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: sql-chat-api
+    env: python
+    buildCommand: "pip install -r backend/requirements.txt"
+    startCommand: "uvicorn main:app --host 0.0.0.0 --port 10000"
+    workingDir: backend
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false  # 手動輸入於 Render 設定中
+      - key: DB_URL
+        sync: false  # 手動輸入於 Render 設定中
