@@ -6,7 +6,7 @@ import os
 import json
 
 # 從環境變數取得設定
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY") 
 DB_URL = os.getenv("DB_URL")
 
 openai.api_key = OPENAI_API_KEY
