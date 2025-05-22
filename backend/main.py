@@ -39,4 +39,7 @@ async def ask_question(req: QuestionRequest):
         return {"sql": sql, "data": rows}
 
     except Exception as e:
-        return {"error": str(e)}
+        return {
+            "error": str(e),
+            "trace": traceback.format_exc()
+        }
