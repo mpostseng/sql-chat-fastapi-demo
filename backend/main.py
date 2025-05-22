@@ -34,7 +34,7 @@ async def ask_question(req: QuestionRequest):
     try:
         with engine.connect() as conn:
             result = conn.execute(sqlalchemy.text(sql))
-            rows = [dict(row) for row in result.mappings]
+            rows = [dict(row) for row in result.mappings()]
 
         return {"sql": sql, "data": rows}
 
